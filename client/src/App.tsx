@@ -14,6 +14,7 @@ import Loans from "./pages/loans";
 import Transactions from "./pages/transactions";
 import Wallet from "./pages/wallet";
 import Settings from "./pages/settings";
+import Help from "./pages/help";
 
 function PrivateRoute({ component: Component, ...rest }: { component: React.ComponentType, path: string }) {
   return (
@@ -32,20 +33,14 @@ function Router() {
   return (
     <Switch>
       <Route path="/login" component={Login} />
+      <PrivateRoute path="/" component={Dashboard} />
       <PrivateRoute path="/dashboard" component={Dashboard} />
       <PrivateRoute path="/marketplace" component={Marketplace} />
       <PrivateRoute path="/loans" component={Loans} />
       <PrivateRoute path="/transactions" component={Transactions} />
       <PrivateRoute path="/wallet" component={Wallet} />
       <PrivateRoute path="/settings" component={Settings} />
-      
-      {/* Redirect root to dashboard */}
-      <Route path="/">
-        {() => {
-          window.location.href = "/dashboard";
-          return null;
-        }}
-      </Route>
+      <PrivateRoute path="/help" component={Help} />
       
       {/* Fallback to 404 */}
       <Route component={NotFound} />

@@ -17,7 +17,7 @@ function SidebarItem({ href, icon, label, isActive }: SidebarItemProps) {
   return (
     <li className="mb-2">
       <Link href={href}>
-        <a
+        <div
           className={cn(
             "flex items-center p-3 rounded-lg font-medium transition-colors duration-200",
             isActive
@@ -27,7 +27,7 @@ function SidebarItem({ href, icon, label, isActive }: SidebarItemProps) {
         >
           <i className={`ri-${icon}-line mr-3 text-lg`}></i>
           {label}
-        </a>
+        </div>
       </Link>
     </li>
   );
@@ -103,10 +103,10 @@ export function Sidebar() {
       
       <div className="mt-auto pt-6 border-t border-border">
         <Link href="/help">
-          <a className="flex items-center p-3 rounded-lg text-foreground/70 hover:bg-muted font-medium transition-colors duration-200">
+          <div className="flex items-center p-3 rounded-lg text-foreground/70 hover:bg-muted font-medium transition-colors duration-200">
             <i className="ri-question-line mr-3 text-lg"></i>
             Help & Support
-          </a>
+          </div>
         </Link>
         <button 
           onClick={handleLogout}
