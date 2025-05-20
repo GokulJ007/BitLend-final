@@ -12,13 +12,13 @@ interface MobileFooterItemProps {
 function MobileFooterItem({ href, icon, label, isActive }: MobileFooterItemProps) {
   return (
     <Link href={href}>
-      <a className={cn(
+      <div className={cn(
         "flex flex-col items-center",
         isActive ? "text-primary" : "text-foreground/70 hover:text-primary transition-colors duration-200"
       )}>
         <i className={`ri-${icon}-line text-xl`}></i>
         <span className="text-xs mt-1">{label}</span>
-      </a>
+      </div>
     </Link>
   );
 }
