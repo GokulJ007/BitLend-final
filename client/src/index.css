@@ -130,6 +130,31 @@
   animation: pulse 1.5s infinite;
 }
 
+/* Animation for Bitcoin icon */
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  75%, 100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-ping-slow {
+  animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Hover effects for cards */
+.stat-card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:border-primary/30;
+}
+
+.marketplace-card-hover {
+  @apply transition-all duration-300 hover:shadow-md hover:border-primary/30;
+}
+
 /* Bitcoin gradient */
 .bitcoin-gradient {
   background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)/0.8) 100%);
