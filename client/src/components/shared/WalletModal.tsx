@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'wouter';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogClose } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { useUserWallet } from '@/hooks/use-wallet';
@@ -11,11 +12,14 @@ interface WalletModalProps {
 
 export function WalletModal({ isOpen, onClose }: WalletModalProps) {
   const { connect, isConnecting } = useUserWallet();
+  const [, setLocation] = useLocation();
 
   const handleConnect = async (providerType: string) => {
     try {
       await connect();
       onClose();
+      // Redirect to dashboard after successful connection
+      setLocation('/dashboard');
     } catch (error) {
       console.error(`Error connecting to ${providerType}:`, error);
     }
