@@ -30,11 +30,14 @@ export function MobileHeader() {
           </div>
         </div>
         <div className="flex items-center">
-          <Button variant="ghost" size="icon" className="relative mr-3">
+          <Button variant="ghost" size="icon" className="relative mr-2">
             <i className="ri-notification-3-line text-2xl text-foreground"></i>
             <span className="absolute top-0 right-0 bg-destructive text-destructive-foreground text-xs rounded-full h-4 w-4 flex items-center justify-center pulse-animation">2</span>
           </Button>
-          <div className="bg-primary text-primary-foreground rounded-full h-8 w-8 flex items-center justify-center">
+          
+          <ThemeToggle />
+          
+          <div className="bg-primary text-primary-foreground rounded-full h-8 w-8 flex items-center justify-center ml-2">
             <span className="font-semibold">{user?.avatarInitials || "BT"}</span>
           </div>
         </div>
