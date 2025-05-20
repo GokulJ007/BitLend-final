@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { UserProfileDropdown } from '@/components/shared/UserProfileDropdown';
+import { ThemeToggle } from '@/components/shared/ThemeToggle';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useLocation } from 'wouter';
@@ -48,6 +49,8 @@ export function DesktopHeader() {
             <i className="ri-notification-3-line text-2xl text-foreground"></i>
             <span className="absolute top-0 right-0 bg-destructive text-destructive-foreground text-xs rounded-full h-4 w-4 flex items-center justify-center pulse-animation">2</span>
           </Button>
+          
+          <ThemeToggle />
           
           <UserProfileDropdown />
         </div>

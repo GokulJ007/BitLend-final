@@ -4,6 +4,7 @@ import { useAuth } from '@/hooks/use-auth';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { Sidebar } from './Sidebar';
+import { ThemeToggle } from '@/components/shared/ThemeToggle';
 
 export function MobileHeader() {
   const { user } = useAuth();
