@@ -82,7 +82,7 @@ export function OfferLoanForm({ isOpen, onClose, onSuccess }: OfferLoanFormProps
   }
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
           <DialogTitle>Offer a Loan</DialogTitle>
